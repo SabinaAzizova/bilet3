@@ -1,0 +1,35 @@
+﻿@using Bilet3.Models;
+
+@model List<Doctor>
+@{
+    int count = 0;
+}<h1>
+    Doctors
+    <a class="btn btn-primary" asp-action="Create">Create</a>
+</h1>
+<div class="container"><table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">FullName</th>
+      <th scope="col">ImgUrl</th>
+      <th scope="col">ImgFile</th>
+    </tr>
+  </thead>
+  <tbody>
+            @foreach( var item in Model )
+            {
+                count++;
+                <tr>
+      <th scope="row">@count</th>
+      <td>@item.FullName</td>
+      <td>@item.ImgUrl</td>
+     <td> <img src="~/Upload/Doctor/@item.ImgUrl"/></td>
+     <td><a class="btn btn-secondary" asp-action="Update" asp-route-id="@item.Id">Update</a></td>
+     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">update</a>
+      </tr>
+            }
+
+ 
+  </tbody>
+</table></div>

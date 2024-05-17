@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Bilet3.props" />
+</Project>
